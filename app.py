@@ -233,7 +233,12 @@ html, body, [data-testid="stAppViewContainer"], .stApp {
 # HEADER (inchangé)
 # =====================================================================
 now = datetime.now()
-date_str = now.strftime("%d %B %Y - %H:%M")
+from datetime import datetime
+import pytz
+
+montreal = pytz.timezone("America/Toronto")
+date_str = datetime.now(montreal).strftime("%d/%m/%Y · %H:%M")
+
 
 st.markdown(f"""
 <div class="app-header">
@@ -471,4 +476,4 @@ with col2:
     
     st.markdown('</div>', unsafe_allow_html=True)
 
-st.caption("SenClinique AI Pro • Modèle Hybride CNN+ViT (M5) • Développé par Samba Diakho")
+st.caption("SenClinique AI Pro • Modèle Hybride CNN+ViT (M5) • Développé par Samba Diakho-Hanane Derback-Youva Hamani -Etienne Bledou • 2026")
